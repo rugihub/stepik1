@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "a768eb43-6a1b-47bb-8428-de79de3f8759",
+		"name": "MyCollect3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20403150"
+	},
+	"item": [
+		{
+			"name": "GET postman1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "postman-echo.com/get",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET nasa1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
+					"protocol": "https",
+					"host": [
+						"api",
+						"nasa",
+						"gov"
+					],
+					"path": [
+						"planetary",
+						"apod"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "DEMO_KEY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET postman2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "postman-echo.com/basic-auth",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"basic-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET postb1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.toptal.com/developers/postbin/1655370471043-7060162257403",
+					"protocol": "https",
+					"host": [
+						"www",
+						"toptal",
+						"com"
+					],
+					"path": [
+						"developers",
+						"postbin",
+						"1655370471043-7060162257403"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET stackoverflow1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://stackoverflow.com",
+					"protocol": "https",
+					"host": [
+						"stackoverflow",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET swapi1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://swapi.co",
+					"protocol": "https",
+					"host": [
+						"swapi",
+						"co"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET swapi2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody);\r",
+							"var schema = {\r",
+							"\"type\": \"object\",\r",
+							"\"required\": [\"name\", \"homeworld\", \"films\", \"species\", \"vehicles\", \"starships\"],\r",
+							"\"properties\": {\r",
+							"    \"name\": {\"type\": \"string\"},\r",
+							"    \"homeworld\": {\"type\": \"string\"},\r",
+							"    \"films\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},\r",
+							"    \"species\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},\r",
+							"    \"vehicles\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},\r",
+							"    \"starships\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}},\r",
+							"}\r",
+							"};\r",
+							"pm.test(\"Body is good\", function() {\r",
+							"pm.expect(tv4.validate(data, schema)).to.be.true;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://swapi.dev/api/people/1",
+					"protocol": "https",
+					"host": [
+						"swapi",
+						"dev"
+					],
+					"path": [
+						"api",
+						"people",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
